@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+class Point {
+private:
+    int x;
+    int y;
+public:
+ 
+
+    Point(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
+    void Print() {
+        cout << "(" << x << "," << y << ")" << endl;
+    }
+    double  Distance() {
+        return sqrt(x * x + y * y);
+    }
+    bool Ravenstvo(Point other) {
+        return x == other.x && y == other.y;
+    }
+};
+
+int main()
+{
+    setlocale(0, "");
+    Point p1(2, 8);
+    Point p2(6, 3);
+    p1.Print();
+    p2.Print();
+    cout << "расстояния от точки p1 до начала координат: " << p1.Distance() << endl;
+    cout << "расстояния от точки p2 до начала координат: " << p2.Distance() << endl;
+    if (p1.Ravenstvo(p2)) {
+        cout << "Точки равны" << endl;
+    }
+    else {
+        cout << "Точки  не равны" << endl;
+    }
+  
+
+}
